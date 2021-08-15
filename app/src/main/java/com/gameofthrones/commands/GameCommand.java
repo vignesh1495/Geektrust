@@ -20,39 +20,38 @@ public class GameCommand implements ICommand {
 
     @Override
     public void execute(String inputFile) {
-        String output="";
+        String output = "";
         try {
             BufferedReader reader;
             reader = new BufferedReader(new FileReader(inputFile));
-            String line = reader.readLine();    
+            String line = reader.readLine();
             ArrayList<String> allies = new ArrayList<String>();
             allies.add("SPACE");
-        while (line != null) {
-            String kingdomname = line.substring(0, line.indexOf(' '));
-            String message =  line.substring(line.indexOf(' ') + 1);     
-            String ally = playingGameSerivce.playGame(kingdomname,message);
-            if(ally != null) {
-                allies.add(ally);
-            }   
-            line = reader.readLine();
-        }
-        reader.close();
-        output = "";
-        if (allies.size()>=4) {
-            for (String ally : allies) {
-                output+=ally+" ";
+            while (line != null) {
+                String kingdomname = line.substring(0, line.indexOf(' '));
+                String message = line.substring(line.indexOf(' ') + 1);
+                String ally = playingGameSerivce.playGame(kingdomname, message);
+                if (ally != null) {
+                    allies.add(ally);
+                }
+                line = reader.readLine();
             }
-        }  else {
-            output="NONE";
-        }    
-        System.out.println(output.trim());   
-        }
-        catch (FileNotFoundException e) {
+            reader.close();
+            output = "";
+            if (allies.size() >= 4) {
+                for (String ally : allies) {
+                    output += ally + " ";
+                }
+            } else {
+                output = "NONE";
+            }
+            System.out.println(output.trim());
+        } catch (FileNotFoundException e) {
+            System.out.println("No Such File is Found");
+            e.printStackTrace();
+        } catch (IOException e) {
             e.printStackTrace();
         }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
-    
+
     }
 }

@@ -25,8 +25,7 @@ public class App {
     }
 
     public static void main(String[] args) {
-        new App().run(
-                "C:\\Users\\DELL\\Desktop\\vigneshrajdev18-me_object_modeling-master\\GameOfThrones\\app\\src\\main\\resource\\input.txt");
+        new App().run(args[0]);
 
         // new App().run(args[0]);
     }
