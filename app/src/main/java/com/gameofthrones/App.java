@@ -25,9 +25,10 @@ public class App {
     }
 
     public static void main(String[] args) {
-        String path = "C:\\Users\\DELL\\Desktop\\vigneshrajdev18-me_object_modeling-master\\GameOfThrones\\app\\src\\main\\resource\\input.txt";
+        String path = args[0];
+        // String path =
+        // "C:\\Users\\DELL\\Desktop\\vigneshrajdev18-me_object_modeling-master\\GameOfThrones\\app\\src\\main\\resource\\input.txt";
         new App().run(path);
 
-        // new App().run(args[0]);
     }
 }
