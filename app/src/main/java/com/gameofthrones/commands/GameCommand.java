@@ -32,7 +32,9 @@ public class GameCommand implements ICommand {
                 String message = line.substring(line.indexOf(' ') + 1);
                 String ally = playingGameSerivce.playGame(kingdomname, message);
                 if (ally != null) {
-                    allies.add(ally);
+                    if (!allies.contains(ally)) {
+                        allies.add(ally);
+                    }
                 }
                 line = reader.readLine();
             }
