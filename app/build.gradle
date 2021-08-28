@@ -25,12 +25,12 @@ plugins {
 
 
 jar {
-    archiveBaseName = 'geektrust' //Please do not change this final artifact name
+    archiveBaseName = 'clover' //Please do not change this final artifact name
     archiveVersion = null   //Please do not change this final artifact version
     version = null   //Please do not change this final artifact version
     
     manifest {
-        attributes 'Main-Class' : 'com.gameofthrones.App' //Change this to the main class of your program which will be executed
+        attributes 'Main-Class' : 'com.onlinemarketmaker.App' //Change this to the main class of your program which will be executed
     }
     // To create a single jar with all dependencies.
     from {
@@ -69,7 +69,7 @@ dependencies {
 application {
 
    // Define the main class for the application.
-mainClassName ="com.gameofthrones.App"
+mainClassName ="com.onlinemarketmaker.App"
 
 
 }
